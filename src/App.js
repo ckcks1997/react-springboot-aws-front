@@ -28,9 +28,16 @@ function App() {
     </Paper>
   );
 
+  const addItem = item =>{
+    item.id="ID-"+items.length;
+    item.done = false;
+    setItems([...items, item]);
+    console.log("items:", items);
+  }
+
   return <div className="App">
 	<Container maxWidth="md">
-		<AddTodo/>
+		<AddTodo addItem={addItem}/>
 		<div className="TodoList">{todoItems}</div>
 	</Container>
 	</div>;

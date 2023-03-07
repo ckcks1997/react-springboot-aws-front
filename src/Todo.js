@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ListItem, ListItemText, InputBase, Checkbox } from "@mui/material";
+import { ListItem, ListItemText, InputBase, Checkbox, ListItemSecondaryAction, IconButton } from "@mui/material";
+import DeleteOutlined from "@mui/icons-material/DeleteOutlined";
 const Todo = (props) => {
   const [item, setItem] = useState(props.item);
 
@@ -17,6 +18,11 @@ const Todo = (props) => {
           fullWidth={true}
         />
       </ListItemText>
+      <ListItemSecondaryAction>
+        <IconButton aria-label="delete todo">
+          <DeleteOutlined/>
+        </IconButton>
+      </ListItemSecondaryAction>
     </ListItem>
   );
 };
