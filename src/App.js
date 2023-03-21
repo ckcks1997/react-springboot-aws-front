@@ -15,7 +15,7 @@ function App() {
 	call("/todo", "GET", null)
 		.then(res => {
 			setItems(res.data);
-			setTimeout(()=>{setLoading(false)},1000);
+			setTimeout(()=>{setLoading(false)},100);
 		});
   }, []);
 

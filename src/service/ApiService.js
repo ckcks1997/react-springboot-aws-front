@@ -49,6 +49,11 @@ export function signin(userDTO){
     });
 }
 
+export function socialLogin(provider){
+    const frontendUrl = window.location.protocol + "//" + window.location.host;
+    window.location.href= API_BASE_URL + "/auth/authorize/"+provider+"?redirect_url="+frontendUrl;
+}
+
 export function signout(){
     localStorage.setItem("ACCESS_TOKEN", null);
     window.location.href = "/login";
